@@ -16,9 +16,11 @@ void ofApp::setup() {
 	bloomFbo.allocate(ofGetWidth(), ofGetHeight());
 	ofEnableArbTex();
 	bloom.setup(ofGetWidth(), ofGetHeight(), bloomFbo);
-	bloom.setScale(2.3);// min 0.1, max 16
-	bloom.setBrightness(10); // min 0, max 30
-	bloom.setThreshold(0); // min 0, max 2
+	bloom.setScale(1); // default 2.3, min 0.1, max 16
+	bloom.setBrightness(10); // default 5, min 0, max 30
+	bloom.setThreshold(0); // default 0, min 0, max 2
+	
+	bg.load("bg2.png");
 }
 
 //--------------------------------------------------------------
@@ -37,7 +39,9 @@ void ofApp::draw() {
 
     // Draw camera image
     //grabber.draw(0, 0);
-	ofBackground(0);
+	ofClear(0);
+
+	bg.draw(ofRandom(-3, 0), ofRandom(-3, 0));
 
     // Draw tracker landmarks
     tracker.drawDebug();

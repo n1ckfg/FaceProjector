@@ -22,5 +22,6 @@ class ofApp : public ofBaseApp{
 
 		ofxBloom bloom;
 		ofFbo bloomFbo;
-
+		
+		ofImage bg;
 };
