@@ -1,3 +1,4 @@
+ofxBloom
 ofxOpenCv
 ofxCv
 ofxFaceTracker2
